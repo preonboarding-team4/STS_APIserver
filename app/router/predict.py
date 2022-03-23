@@ -10,7 +10,23 @@ router = APIRouter(prefix="/sts")
 
 @router.post("/predict")
 def predict(sentence: SentenceInfo):
+    """2개의 문장을 입력받아 유사도를 예측하여 반환합니다.
 
+    ### Args: \n
+        sentence: sentence1, sentence2
+
+    ### Returns: \n
+        semilarity: label, real label, binary label
+
+    ### Notes:\n
+        real label -> 예측의 실수 값
+
+        label -> real label을 소수 둘째자리에서 반올림한 값
+
+        binary label -> 3을 기준으로 0과 1로 이진분류한 값
+                        0 = [0, 3)
+                        1 = [3, 5]
+    """
     try:
         model, tokenizer = load_models()
     except Exception:
