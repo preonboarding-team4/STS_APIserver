@@ -31,8 +31,17 @@ def predict(sentence: SentenceInfo):
     )
 
     result = model(**tensor)
-    result = result.tolist()[0]
+    result = result.tolist()[0][0]
+
+    label = round(result, 1)
+    real_label = result
+    binary_label = int(result >= 3)
 
     return JSONResponse(
-        status_code=status.HTTP_200_OK, content={"inference result": result}
+        status_code=status.HTTP_200_OK,
+        content={
+            "label": label,
+            "real label": real_label,
+            "binary label": binary_label,
+        },
     )
