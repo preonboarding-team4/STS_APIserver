@@ -1,4 +1,4 @@
-FROM hl8469/preonboarding:base-image-1.0
+FROM hl8469/preonboarding:base-image-1.0.0
 
 COPY . /
 
