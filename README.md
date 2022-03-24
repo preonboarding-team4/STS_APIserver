@@ -2,7 +2,17 @@
 
 2개의 한글 문장을 입력받아 문장간의 유사도를 예측하는 API입니다. 사용한 사전학습 모델은 [KR-BERT_character_sub-character](https://github.com/snunlp/KR-BERT) 입니다.
 
-입력: 문장 2개  
+<br>
+
+### 요청: 유사도 비교 문장 2개  
+```console
+POST {{API_URL}}/sts/krbert
+```
+| 파라미터        | 파라미터 유형 | 데이터 타입 | 필수 여부 | 설명                    |
+| --------------- | ------------- | ----------- | --------- | ----------------------- |
+| `sentence1`      | `body`        | `str`    | `Y`        | 문장 1 |
+| `sentence2` | `body`        | `str`    | `Y`        | 문장 2 |
+
 ```console  
 {
 "sentence1": "숙소 위치는 찾기 쉽고 일반적인 한국의 반지하 숙소입니다.",  
@@ -10,7 +20,14 @@
 }
 ```
 
-반환값: 유사도 예측 결과  
+<br>
+
+### 응답: 유사도 예측 결과  
+| 키        | 데이터 타입 | 설명 |
+| --------------- | ------------- | ----------- |
+| `real label` | `float`        | `유사도 예측결과`    |
+| `label` | `float`        | `real label을 소수 첫째자리에서 반올림한 값`    |
+| `binary label` | `int`        | `3을 기준으로 0과 1로 이진분류한 값, 0 = [0, 3), 1 = [3, 5]`    |
 ```console 
 {
 "label": 3.9,  
@@ -28,7 +45,6 @@
 ├── README.md
 ├── app
 │   ├── basemodels.py
-│   ├── neuralnet.py
 │   ├── router
 │   │   └── predict.py
 │   ├── torch_models
@@ -88,7 +104,7 @@ docker run -d --name <컨테이너 이름> -p <사용할 포트번호>:8000 hl84
 ### curl을 사용하여 호출
 ```console
 curl -X 'POST' \
-  'http://<호스트 주소>:<호스트 포트번호>/sts/predict' \
+  'http://<호스트 주소>:<호스트 포트번호>/sts/krbert' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -116,7 +132,7 @@ http://<호스트 주소>:<호스트 포트번호>/docs
 
 <br>
 
-3. 문장 입력 및 Execute
+3. 문장 입력 및 아래쪽 Execute 클릭
 
 ![](./images/swagger2.png)
 

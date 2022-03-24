@@ -8,7 +8,7 @@ from app.utils import data_preproc, load_models
 router = APIRouter(prefix="/sts")
 
 
-@router.post("/predict")
+@router.post("/krbert")
 def predict(sentence: SentenceInfo):
     """2개의 문장을 입력받아 유사도를 예측하여 반환합니다.
 
