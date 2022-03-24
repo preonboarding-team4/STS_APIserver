@@ -47,7 +47,7 @@
 
 직접 설치하는 방법과 도커 이미지를 사용하는 방법 2가지를 제공합니다.
 
-### local enviroment
+### 직접 설치하기
 
 1. 다운로드 프로젝트
 ```console
@@ -72,7 +72,7 @@ $ python main.py
 
 <br>
 
-### Docker
+### 도커 사용하기
 
 ```console
 docker run -d --name <컨테이너 이름> -p <사용할 포트번호>:8000 hl8469/preonboarding:api-1.0.0
