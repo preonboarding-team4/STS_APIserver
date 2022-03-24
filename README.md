@@ -81,10 +81,10 @@ $ pip install -r requirements.txt
 ```console
 $ python download_model.py
 ```
-모델파일 다운로드 실패 시 아래의 링크에서 직접 받으실 수 있습니다.
-[modelfile google drive](https://drive.google.com/file/d/1Sxlkrz_flJiUbtmblcTW4LNbDxShrVZK/view?usp=sharing)
-직접 다운로드시 아래의 경로에 가중치 파일을 넣어주셔야 합니다.
-`app/torch_models/`
+모델파일 다운로드 실패 시 아래의 링크에서 직접 받으실 수 있습니다.  
+[modelfile google drive](https://drive.google.com/file/d/1Sxlkrz_flJiUbtmblcTW4LNbDxShrVZK/view?usp=sharing)  
+직접 다운로드시 아래의 경로에 가중치 파일을 넣어주셔야 합니다.  
+`app/torch_models/`  
 
 <br>
 
