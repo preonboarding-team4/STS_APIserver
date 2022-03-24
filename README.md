@@ -25,9 +25,10 @@ POST {{API_URL}}/sts/krbert
 ### 응답: 유사도 예측 결과  
 | 키        | 데이터 타입 | 설명 |
 | --------------- | ------------- | ----------- |
-| `real label` | `float`        | `유사도 예측결과`    |
-| `label` | `float`        | `real label을 소수 첫째자리에서 반올림한 값`    |
-| `binary label` | `int`        | `3을 기준으로 0과 1로 이진분류한 값, 0 = [0, 3), 1 = [3, 5]`    |
+| `real label` | `float`        | 유사도 예측결과    |
+| `label` | `float`        | real label을 소수 첫째자리에서 반올림한 값  |
+| `binary label` | `int`        | 3을 기준으로 0과 1로 이진분류한 값, 0 = [0, 3), 1 = [3, 5]  |
+
 ```console 
 {
 "label": 3.9,  
@@ -91,7 +92,11 @@ $ python main.py
 ### 도커 사용하기
 
 ```console
-docker run -d --name <컨테이너 이름> -p <사용할 포트번호>:8000 hl8469/preonboarding:api-1.0.0
+docker run -d --name {{컨테이너 이름}} -p {{사용할 포트번호}}:8000 hl8469/preonboarding:api-1.0.0
+```
+ex)
+```console
+docker run -d --name mycontainer -p 12345:8000 hl8469/preonboarding:api-1.0.0
 ```
 
 <br>
@@ -104,7 +109,7 @@ docker run -d --name <컨테이너 이름> -p <사용할 포트번호>:8000 hl84
 ### curl을 사용하여 호출
 ```console
 curl -X 'POST' \
-  'http://<호스트 주소>:<호스트 포트번호>/sts/krbert' \
+  'http://{{호스트 주소}}:{{호스트 포트번호}}/sts/krbert' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -121,7 +126,7 @@ curl -X 'POST' \
 1. 서버 접속  
 
 ```console
-http://<호스트 주소>:<호스트 포트번호>/docs
+http://{{호스트 주소}}:{{호스트 포트번호}}/docs
 ```
 
 <br>
