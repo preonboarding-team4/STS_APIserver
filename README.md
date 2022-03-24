@@ -85,7 +85,7 @@ docker run -d --name <컨테이너 이름> -p <사용할 포트번호>:8000 hl84
 아래와 같은 방법으로 호출할 수 있습니다.
 
 
-### 1. curl
+### curl을 사용하여 호출
 ```console
 curl -X 'POST' \
   'http://<호스트 주소>:<호스트 포트번호>/sts/predict' \
@@ -99,7 +99,7 @@ curl -X 'POST' \
 
 <br>
 
-### 2. swagger
+### swagger를 통하여 호출
 
 
 1. 서버 접속  
